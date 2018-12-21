@@ -1,0 +1,142 @@
+Lesson 1. Hello, world.
+
+First of all, let's do the mandatory exercise for all programming languages:
+the 'Hello world!' program.
+
+C:
+
+C programs need a mandatory entry point function called 'main()'.  This function
+may have an integer (int) return value, or may not return anything (void).
+
+Exercise 1. 
+---
+Step 1.  Write a program with only a main() function that takes no parameters
+and returns the value '42'.  The program must compile with either:
+
+>> gcc -o main main.c
+
+or
+
+>> cl /TC main.c
+
+Check the return value by checking the %ERRORLEVEL% variable in Windows, or the
+$? variable in Bash.
+---
+
+C programs use the #include <stdio.h> header for standard input and output.  One
+common function for printing formatted data is 'printf(...)'.
+
+Exercise 2.
+---
+Step 1.  Create a program 'hello.c' that takes no parameters, returns 'void', 
+and uses the printf() function for printing the string "Hello, World!" to the
+standard output.  The string should have a new line characted at the end.
+
+What does the %ERRORLEVEL% or $? variable contain now?
+
+
+
+C++:
+
+As in C programs, C++ programs need a mandatory entry point function called
+'main()'.  However, this function *MUST* return an integer.
+
+In C++, we have two choices for outputting text to the standard output.
+
+First, we can use iostreams.  We'll need to #include <iostream>, and then use
+the std::cout variable and its << operator to output text.
+
+Second, we can use the C library.  We'll need to #include <cstdio> (the C++
+alias for stdio.h) and use std::printf(...).  Or, we can #include <stdio.h>
+and use printf(...), with no std::.
+
+Exercise 1.
+---
+Write three programs called 'hello_iostream.cc', 'hello_cstdio.cc' and 
+'hello_stdioh.cc'.  Each one should print the string "Hello, world!" (plus
+new line) to the console, and return the value '42'.
+
+
+
+Java:
+
+To execute a Java program, the java interpreter must be invoked with a class
+name as parameter.  For instance, the following command will attempt to execute
+the Hello.class class.
+
+java --jar Hello
+
+In order to be executable, a class needs to implement a method called main().
+Now, the Java main method needs to be:
+ 1. public. The main method must be visible from outside of the class.
+ 2. static. The main method must be a class method that can be invoked without
+    creating a particular instance.
+ 3. void. The main method must not return a value.
+ 4. The main method must take a single parameter String[] args, which is an
+    array of String objects with the command line parameters.
+
+In Java, we use the System class for printing.  In fact, we use the println()
+method of the 'out' variable or the System class.  This:
+
+System.out.println("stuff");
+
+In case we need to return a value to the operating system, we can use the exit()
+method of the System class too.
+
+Exercise 1.
+---
+Write a class named 'Hello' that prints "Hello, world!" (plus new line) to the
+console, and returns the value 42 to the operating system.
+
+
+
+Perl:
+
+Perl is an interpreted language. A perl script doesn't need an entry point; it
+just takes the script and starts executing from the beginning.  Said this, it
+is helpful to include the following lines at the beginning of the Perl module:
+
+#!/usr/bin/env perl
+use strict;
+use warnings;
+
+The first line is for Bash to know this is a Perl script, so it can go and find
+the perl executable to run it. The second and third line disable some
+non-standard behaviour and enable more warnings, so they help.
+
+Exercise 1.
+---
+Use the print statement to output "Hello, world!" to the console, and the exit()
+function to return the value 42.
+
+
+
+Python:
+
+Python is also an interpreted language.
+
+Here, for printing there are two choices, depending on the version of Python.
+
+In Python 3.x, 'print' is a function: print("things")
+In Python 2.x, 'print' is a statement: print "things"
+
+In recent 2.x, print as a function may exist. However, in 3.x, print as a
+statement is deprecated and does not exist.
+
+For returning the value, we can use exit(), or, even better, sys.exit(), (but
+you need to import the sys module for this one).
+
+To run the module, the syntax would be "python -m hello", or "python hello.py".
+
+Also, if the module is run from the console, the __name__ variable will contain
+the "__main__" string. This means you can detect whether the module is being
+used as a standalone program, or is being called from another module like this:
+
+if __name__ == "__main__":
+    print("I'm main!\n")
+
+Exercise 1.
+---
+Write the 'Hello, World' program for Python. Use sys.exit. Also, don't use
+print, but sys.stdout.write.
+
