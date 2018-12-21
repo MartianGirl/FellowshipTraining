@@ -1,0 +1,2 @@
+# FellowshipTraining
+Some easy exercises.
