@@ -1,0 +1,96 @@
+Lesson 2. Some basics. Functions, variables and operators.
+
+Exercise 1.
+
+Let's try to do a simple program with two functions:
+
+1. A function that takes two integer parameters, and divides the first one by
+the second one. The result must respect the decimals.
+2. A function that takes the result from the previous function and prints it
+out, with ONLY THREE DECIMAL NUMBERS AFTER THE COMMA, and a new line.
+
+
+Exercise 2.
+
+The same program, but taking the parameters from the command line.
+
+Exercise 3.
+
+The same program, but printing the result to a file called "result.txt" in the
+same directory as the executable.
+
+
+Now, the hints:
+
+C:
+
+The function main() takes two optional parameters which contain the command
+line.  These are:
+
+1. int argc: This is the number of arguments in the command line.
+2. char* argv[]: This is the actual parameters, AS C STRINGS. So we need to
+convert them. There are conversion functions (atoi()) or maybe you can use
+sscanf(...). If you can try both, bonus points.
+
+For files, the struct FILE is what we'll be using. We need to open the file
+for writing. Also, the file must be in TEXT mode!!! 
+
+Hint: Beware of the type upcasting!!!
+
+Try this: If you're in GNU/Linux, provided your source file is called
+'twofunctions.c', try compiling with "make twofunctions".  But I don't have
+a Makefile!  It doesn't matter: make knows how to build a 'program' from a
+'program.c' file.
+
+
+
+C++:
+
+The function main() has the same parameters as in C. But now, we have strings
+and stringstreams to read them.
+
+For writing, we also have fstreams.
+
+Also, keep in mind that you need to #include <iostream> for the console I/O, but
+you need to #include <iomanip> for the formatting and modifiers.
+
+Try this: In GNU/Linux, the make without a Makefile trick should work also
+with C++.
+
+
+
+Java:
+
+The functions need to be static, or they need to operate on an object. It's your
+call.
+
+System.out.println() is a bit limited. But we have System.out.format(). It looks
+a bit like C's printf().
+
+
+
+Perl:
+
+The syntax for defining functions is this:
+
+sub function {
+    ...
+}
+
+The parameters are given in an array called '@_'.
+
+Also, Perl has its own version of printf.
+
+
+
+Python:
+
+To define a function, you need to use the 'def' keyword:
+
+def function(par1, par2):
+    // mind the indentation!
+
+A number can be converted to integer (int), long integer (long), and floating
+point (float).
+
+Also, in Python there is a format() function in the str class for text formatting.
