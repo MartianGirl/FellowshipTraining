@@ -10,8 +10,8 @@ may have an integer (int) return value, or may not return anything (void).
 
 Exercise 1. 
 ---
-Step 1.  Write a program with only a main() function that takes no parameters
-and returns the value '42'.  The program must compile with either:
+Step 1.  Write a program 'main.c' with only a main() function that takes no
+parameters and returns the value '42'.  The program must compile with either:
 
 >> gcc -o main main.c
 
@@ -134,6 +134,14 @@ used as a standalone program, or is being called from another module like this:
 
 if __name__ == "__main__":
     print("I'm main!\n")
+
+The standard header of a Python script is a bit like in Perl:
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+The first line is to tell Bash what interpreter must run this. For example,
+if you need python3, you can say #!/usr/bin/env python3
+The second line is the encoding of the source file.
 
 Exercise 1.
 ---
