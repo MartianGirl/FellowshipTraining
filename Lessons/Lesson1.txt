@@ -56,15 +56,30 @@ Write three programs called 'hello_iostream.cc', 'hello_cstdio.cc' and
 'hello_stdioh.cc'.  Each one should print the string "Hello, world!" (plus
 new line) to the console, and return the value '42'.
 
+The program must compile with:
 
+>> g++ -o main main.c
+
+or
+
+>> cl /TP /EHsc main.c
 
 Java:
+
+Java is an interpreter (VM, Virtual Machine) that runs binary files called
+'class' files. These class files are generated from java source code by the
+Java compiler.
+
+To compile a Java program, the compiler must be run. To generate Hello.class
+from Hello.java, we do:
+
+javac Hello.java
 
 To execute a Java program, the java interpreter must be invoked with a class
 name as parameter.  For instance, the following command will attempt to execute
 the Hello.class class.
 
-java --jar Hello
+java Hello
 
 In order to be executable, a class needs to implement a method called main().
 Now, the Java main method needs to be:
